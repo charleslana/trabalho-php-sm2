@@ -1,0 +1,146 @@
+<!-- Content -->
+
+<div class="container my-5 pt-5">
+    <h1 class="text-center">Cadastrar um mercado de frutos do mar</h1>
+    <form class="needs-validation" novalidate onsubmit="return false">
+        <div class="form-group">
+            <div class="md-form mb-3">
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" class="form-control" required />
+                <div class="invalid-feedback">
+                    Por favor digite um email válido
+                </div>
+            </div>
+
+            <div class="md-form mb-3">
+                <label for="senha">Senha*</label>
+                <input type="password" id="senha" class="form-control" required />
+                <div class="invalid-feedback">
+                    Por favor digite uma senha
+                </div>
+            </div>
+
+            <div class="md-form mb-3">
+                <label for="csenha">Confirme a senha*</label>
+                <input type="password" id="csenha" class="form-control" required />
+                <div class="invalid-feedback">
+                    Por favor confirme sua senha
+                </div>
+            </div>
+
+            <div class="md-form mb-3">
+                <select id="ocupacao" class="mdb-select md-form" required>
+                    <option value="" selected disabled>Selecione sua ocupação*</option>
+                    <option value="1">Pescador</option>
+                    <option value="2">Mercado</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor confirme sua ocupação
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3 md-form">
+                <label for="nome">Nome*</label>
+                <input type="text" class="form-control" id="nome" required />
+                <div class="invalid-feedback">
+                    Por favor digite o seu nome
+                </div>
+            </div>
+            <div class="col-md-6 mb-3 md-form">
+                <label for="sobrenome">Sobrenome*</label>
+                <input type="text" class="form-control" id="sobrenome" required />
+                <div class="invalid-feedback">
+                    Por favor digite o seu sobrenome
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3 md-form">
+                <label for="endereco">Endereço*</label>
+                <input type="text" class="form-control" id="endereco" required />
+                <div class="invalid-feedback">
+                    Por favor digite seu endereço
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 md-form">
+                <label for="cidade">Cidade*</label>
+                <input type="text" class="form-control" id="cidade" required />
+                <div class="invalid-feedback">
+                    Por favor digite sua cidade
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 md-form">
+                <label for="estado">Estado*</label>
+                <input type="text" class="form-control" id="estado" required />
+                <div class="invalid-feedback">
+                    Por favor digite seu estado
+                </div>
+            </div>
+            <div class="col-md-2 mb-3 md-form">
+                <label for="numero">Número*</label>
+                <input type="number" class="form-control" id="numero" required />
+                <div class="invalid-feedback">
+                    Por favor digite seu número
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="md-form mt-0">
+                <label for="telefone">Telefone*</label>
+                <input type="number" id="telefone" class="form-control" required />
+                <div class="invalid-feedback">
+                    Por favor digite seu telefone
+                </div>
+            </div>
+            <div class="md-form mt-0">
+                <textarea type="text" id="descricao" rows="3" class="form-control md-textarea" required></textarea>
+                <label for="descricao" class="active">Descrição breve do seu mercado*</label>
+                <div class="invalid-feedback">
+                    Por favor digite a descrição do seu mercado
+                </div>
+            </div>
+            <p>Escolha um imagem para o banner do seu mercado*</p>
+            <div class="md-form file-upload-wrapper">
+                <label for="banner"></label>
+                <input class="file-upload" type="file" id="banner" data-max-file-size="1M" required />
+            </div>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
+            <label class="form-check-label" for="invalidCheck2">
+                Aceito os termos de uso*
+            </label>
+            <div class="invalid-feedback">
+                Você deve aceitar os termos para o cadastro.
+            </div>
+        </div>
+
+        <button id="btn" class="btn btn-primary btn-sm btn-rounded mt-3" type="submit">Cadastrar</button>
+    </form>
+</div>
+
+<script>
+    iniciarMdb();
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                toastr.error('Verifique os campos obrigatórios com o asterisco na frente');
+            }
+            else {
+                cadastro();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+    $('.pesq').removeClass('d-none');
+    $('.cadastro').addClass('d-none');
+    $('.mdb-select.select-wrapper .select-dropdown').val("").removeAttr('readonly').attr("placeholder","Selecione sua ocupação*").prop('required', true).addClass('form-control').css('background-color', '#fff');
+    lerCadastro();
+</script>

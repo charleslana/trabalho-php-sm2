@@ -1,0 +1,95 @@
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Entrar em sua conta</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="needs-validation-login" novalidate onsubmit="return false">
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="defaultForm-email" class="form-control validate" required />
+                        <div class="invalid-feedback">
+                            Por favor digite um email válido
+                        </div>
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">Seu email*</label>
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate" required />
+                        <div class="invalid-feedback">
+                            Por favor digite uma senha
+                        </div>
+                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Sua senha*</label>
+                    </div>
+                </div>
+                <div class="invalid-feedback text-center mb-2 erro-login">
+                    Bad credentials
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-default logar">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+    <!-- Footer Links -->
+    <div class="container">
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+
+        <!-- Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+            <!-- Grid column -->
+            <div class="col-md-8 col-12 mt-5">
+                <p style="line-height: 1.7rem;">
+                    <b>Agradecimentos</b><br />
+                    Bruno Menezes, Charles Lana, Gabriel Martins, Larissa Rocha, Luiz Rocha, Taís Ribeiro.
+                </p>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;" />
+
+        <!-- Grid row-->
+        <div class="row pb-3">
+            <!-- Grid column -->
+            <div class="col-md-12">
+                <div class="mb-5 flex-center">
+                    <img src="img/logo.png" height="100" alt="logo" />
+                </div>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright All Blue Dev by <a href="https://www.charleslana.com.br" target="_blank">Charles Lana</a></div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script>
+    var forms = document.getElementsByClassName('needs-validation-login');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                toastr.error('Verifique os campos obrigatórios com o asterisco na frente');
+            }
+            else {
+                entrar();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+</script>

@@ -1,0 +1,77 @@
+<div class="container my-5">
+    <!--Section: Content-->
+    <section class="dark-grey-text">
+        <div class="row pr-lg-5" id="s_content">
+            <div class="col-md-7 mb-4">
+                <div class="view">
+                    <img src="img/pesca.png" class="img-fluid" alt="smaple image" height="200" />
+                </div>
+            </div>
+            <div class="col-md-5 d-flex align-items-center">
+                <div>
+                    <h3 class="font-weight-bold mb-4 mt-4">Vida na Água</h3>
+                    <p>
+                        No Brasil, a atividade pesqueira é um negócio que oportuniza o crescimento do país com inclusão social e geração de emprego e renda. Para a Organização Mundial da Saúde (OMS), o pescado é a proteína animal mais
+                        saudável e consumida no mundo. As vendas nacionais no setor podem ser classificadas como diretas ou indiretas, onde a distribuição acontece de diferentes formas, entre atacado e varejo.
+                    </p>
+                    <button type="button" class="btn btn-orange btn-rounded mx-0" onclick="page('cadastro');">Cadastrar um mercado de frutos do mar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row pr-lg-5">
+            <div class="col-md-12 d-flex align-items-center">
+                <div class="container-fluid" id="pesquisa">
+                    <h1 class="text-center">Pesquisar um mercado de frutos do mar</h1>
+                    <div class="md-form">
+                        <i class="fas fa-search prefix"></i>
+                        <input type="text" id="search-form" class="search form-control" onkeyup="pesquisarMercado(this)" />
+                        <label for="search-form">Pesquisar: Digite um endereço, cidade ou estado.</label>
+                    </div>
+                    <!-- Grid row -->
+                    <div class="row" id="search-result"></div>
+                    <!-- Grid row -->
+
+                    <!--Pagination -->
+                    <nav class="d-flex justify-content-center my-4 wow fadeIn d-none" id="paginacao">
+                        <ul class="pagination pagination-circle pg-info mb-0">
+                            <!--First-->
+                            <li class="page-item" id="primeiro">
+                                <a class="page-link">Primeiro</a>
+                            </li>
+
+                            <!--Arrow left-->
+                            <li class="page-item" id="anterior">
+                                <a class="page-link" aria-label="Anterior">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Anterior</span>
+                                </a>
+                            </li>
+
+                            <ul class="pagination pagination-circle pg-info mb-0" id="pagina"></ul>
+
+                            <!--Arrow right-->
+                            <li class="page-item" id="proximo">
+                                <a class="page-link" aria-label="Próximo">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Próximo</span>
+                                </a>
+                            </li>
+
+                            <!--Last-->
+                            <li class="page-item" id="ultimo">
+                                <a class="page-link">Último</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Section: Content-->
+</div>
+<script>
+    $('.pesq').addClass('d-none');
+    $('.cadastro').removeClass('d-none');
+    $('.sair').html('<i class="fas fa-sign-out-alt"></i> Sair').removeClass('disabled');
+    lerHome();
+</script>

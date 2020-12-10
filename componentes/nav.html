@@ -1,0 +1,33 @@
+<!--Navbar-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" onclick="page('home');">
+        <img src="img/logo.png" height="50" alt="logo" />
+    </a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+            <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 cadastro" type="button" onclick="page('cadastro');"><i class="fas fa-user-plus"></i> Cadastrar um mercado de frutos do mar</button>
+            <ul class="navbar-nav ml-auto pesq d-none">
+                <li class="nav-item">
+                    <a class="nav-link" href="" onclick="page('home'); return false"><i class="fas fa-search prefix"></i> Pesquisar um mercado</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto autenticado d-none">
+                <li class="nav-item">
+                    <a class="nav-link" href="" onclick="page('atualizacao'); return false"><i class="fas fa-user"></i> <span id="nav-nome">Nome</span>, Atualizar dados?</a>
+                </li>
+            </ul>
+            <a href="#" class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 login" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-key"></i> Login</a>
+            <a href="javascript:void(0);" onclick="sair();" class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 sair d-none"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </form>
+    </div>
+    <!-- Collapsible content -->
+</nav>
+<!--/.Navbar-->
