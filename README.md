@@ -4,7 +4,7 @@
 Vida na água
 
 ## Projeto
-O projeto visa a interação entre os usuário em um comércio de frutos do mar, sendo assim suas definicões:
+O projeto visa a interação entre os usuário em um comércio de frutos do mar, sendo assim suas definições:
 - Página Cadastro de usuário
 - Página Login de usuário
 - Página de  Alterar o cadastro do usuário
